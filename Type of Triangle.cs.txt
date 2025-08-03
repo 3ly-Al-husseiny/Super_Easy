@@ -1,0 +1,19 @@
+public class Solution {
+    public string TriangleType(int[] nums) {
+        Array.Sort(nums);
+		StringBuilder result = new StringBuilder();
+		if(nums[0] + nums[1] >= nums[3])
+		{
+			result.Append(nums switch 
+			{
+				nums[0] == nums[1] and nums[1] == nums[2] => "equilateral"
+				nums[0] == nums[1] or nums[1] == nums[2] or nums[0] == nums[3] => "isosceles"
+				_ => "scalene"
+			}
+			)
+		}
+		else
+			result.Append("none")
+		return result;
+    }
+}
